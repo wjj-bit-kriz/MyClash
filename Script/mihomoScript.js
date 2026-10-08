@@ -1681,9 +1681,20 @@ function main(config) {
   ];
   newConfig['rule-providers'] = finalRuleProviders;
 
+  // 按应用包名分流（Android/iOS）：App 流量优先按包名走对应分组，不受域名重叠影响；
+  // 仅当对应分组的开关开启时生效，开关关闭则该 App 按域名规则正常回落
+  const processNameMap = [
+    ['com.zhiliaoapp.musically', 'TikTok'], // TikTok 国际版
+    ['com.anthropic.claude', 'AI'],          // Claude
+    ['com.openai.chatgpt', 'AI'],            // ChatGPT
+  ];
+  const processRules = processNameMap
+    .filter((entry) => ruleOptionsEnable[entry[1]])
+    .map((entry) => `PROCESS-NAME,${entry[0]},${entry[1]}`);
   newConfig['rules'] = [
     ...prefixRules,
     ...(ruleOptionsEnable.屏蔽国外QUIC ? blockForeignQuic : []),
+    ...processRules,
     ...functionalRules,
 
     // 兜底规则
