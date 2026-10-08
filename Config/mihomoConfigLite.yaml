@@ -200,6 +200,11 @@ rule-providers:
     interval: 86400
     url: 'https://fastly.jsdelivr.net/gh/viewer12/OverseasAI.list@main/rule/Clash/OverseasAI/OverseasAI.list'
     path: './ruleset/ai.list'
+  github:
+    <<: *rule_providers_domain
+    url: 'https://fastly.jsdelivr.net/gh/appshubcc/bett-rules@meta/geo/geosite/github.mrs'
+    path: './ruleset/github.mrs'
+    path-in-bundle: 'geo/geosite/github.mrs'
   telegram:
     <<: *rule_providers_domain
     url: 'https://fastly.jsdelivr.net/gh/appshubcc/bett-rules@meta/geo/geosite/telegram.mrs'
@@ -376,6 +381,11 @@ proxy-groups:
     default-selected: '美国'
     icon: 'https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Icons/svg/OpenAI.svg'
 
+  - name: 'GitHub'
+    <<: [*group_common_select, *proxies_default]
+    default-selected: '美国'
+    icon: 'https://cdn.simpleicons.org/github'
+
   - name: 'Telegram'
     <<: [*group_common_select, *proxies_default]
     icon: 'https://fastly.jsdelivr.net/gh/AIsouler/MyClash@main/Icons/svg/Telegram.svg'
@@ -488,6 +498,7 @@ rules:
   - RULE-SET,google,Google
   - RULE-SET,google_ip,Google,no-resolve
   - RULE-SET,ai,AI
+  - RULE-SET,github,GitHub
   - RULE-SET,telegram,Telegram
   - RULE-SET,telegram_ip,Telegram,no-resolve
   - RULE-SET,steam,Steam
