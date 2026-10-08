@@ -448,7 +448,7 @@ const serviceConfigs = [
     defaultSelected: '美国',
     providers: {
     },
-    icon: 'https://cdn.simpleicons.org/github',
+    icon: 'https://fastly.jsdelivr.net/gh/wjj-bit-kriz/MyClash@main/Icons/svg/Github.svg',
     rules: ['RULE-SET,github,GitHub'],
   },
   {
