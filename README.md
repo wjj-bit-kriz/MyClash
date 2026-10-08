@@ -45,6 +45,26 @@ AI 分组默认走「美国」节点（可在策略组里手动切换）。
 
 其他 Mihomo 内核客户端（Clash Verge、NekoBox 等）同理：导入 URL → 填订阅 → 选节点。
 
+## 📜 覆写脚本（Bettbox 可视化开关）
+
+直接用上面的 YAML 订阅即可；如果你用 **Bettbox**，还可以挂上覆写脚本，在 App 里一键开关各个服务分组：
+
+**精简版脚本**
+
+```
+https://raw.githubusercontent.com/wjj-bit-kriz/MyClash/main/Script/Script.js
+```
+
+**完整版脚本**
+
+```
+https://raw.githubusercontent.com/wjj-bit-kriz/MyClash/main/Script/mihomoScript.js
+```
+
+用法（Bettbox）：订阅卡片 → 覆写 → 脚本，填入上面对应链接。之后在覆写设置里会出现各服务的可视化开关（AI、GitHub、Google、Telegram 等），关掉某个开关后该分组消失、对应流量回落到默认代理。
+
+两个脚本同样基于上游二次修改：AI 规则集换成 OverseasAI.list，并新增了 GitHub 开关。
+
 ## 🔄 与原版的区别
 
 | | 原版 AIsouler/MyClash | 本仓库 |
