@@ -551,6 +551,15 @@ const serviceConfigs = [
         path: './ruleset/tiktok.mrs',
         'path-in-bundle': 'geo/geosite/tiktok.mrs',
       },
+      tiktok_extra: {
+        // blackmatrix7 TikTok 规则（classical 文本）：补足字节跳动系基础设施域名
+        type: 'http',
+        behavior: 'classical',
+        format: 'text',
+        interval: 86400,
+        url: 'https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok.list',
+        path: './ruleset/tiktok_extra.list',
+      },
       tiktok_ip: {
         ...ruleProviderCommonIpcidr,
         url: `${ruleSetBaseUrl}geoip/tiktok.mrs`,
@@ -559,7 +568,7 @@ const serviceConfigs = [
       },
     },
     icon: `${iconBaseUrl}TikTok.svg`,
-    rules: ['RULE-SET,tiktok,TikTok', 'RULE-SET,tiktok_ip,TikTok,no-resolve'],
+    rules: ['RULE-SET,tiktok,TikTok', 'RULE-SET,tiktok_extra,TikTok', 'RULE-SET,tiktok_ip,TikTok,no-resolve'],
   },
   {
     name: 'Twitter',
