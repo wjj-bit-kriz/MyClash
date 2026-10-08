@@ -10,10 +10,17 @@ Mihomo（Clash Meta）分流配置，开箱即用。
 
 把下面对应链接填进客户端的「订阅 / 配置 URL」即可（以 FlClash 为例：配置 → 新建 → URL 导入）。
 
-| 版本 | 说明 | 订阅链接 |
-|---|---|---|
-| 全量版 | 完整分组：AI / 流媒体 / 游戏 / 电报 / 苹果 / 微软 / 谷歌等 | `https://raw.githubusercontent.com/wjj-bit-kriz/MyClash/main/Config/mihomoConfig.yaml` |
-| 精简版 | 保留常用分组，体积更小，低内存设备友好 | `https://raw.githubusercontent.com/wjj-bit-kriz/MyClash/main/Config/mihomoConfigLite.yaml` |
+**全量版**（完整分组：AI / 流媒体 / 游戏 / 电报 / 苹果 / 微软 / 谷歌等）
+
+```
+https://raw.githubusercontent.com/wjj-bit-kriz/MyClash/main/Config/mihomoConfig.yaml
+```
+
+**精简版**（保留常用分组，体积更小，低内存设备友好）
+
+```
+https://raw.githubusercontent.com/wjj-bit-kriz/MyClash/main/Config/mihomoConfigLite.yaml
+```
 
 > ⚠️ 导入后**必须**在配置里填入自己的机场订阅链接：
 > 找到 `proxy-providers` → `provider1` → `url: ''`，把订阅链接填进单引号里。
@@ -23,13 +30,11 @@ Mihomo（Clash Meta）分流配置，开箱即用。
 
 AI 分组默认走「美国」节点（可在策略组里手动切换）。
 
-| 项目 | 内容 |
-|---|---|
-| 规则源 | [viewer12/OverseasAI.list](https://github.com/viewer12/OverseasAI.list) |
-| 规则数 | 约 618 条（DOMAIN 50 / DOMAIN-SUFFIX 553 / DOMAIN-KEYWORD 11 / IP-CIDR 2 / IP-ASN 2） |
-| 更新频率 | 规则源每天更新，配置每天自动拉取（`interval: 86400`） |
-| 覆盖范围 | OpenAI、Claude、Anthropic、Gemini、Copilot、Civitai，以及 Stripe、PayPal、Nvidia、JetBrains AI 等 |
-| 技术细节 | `behavior: classical` + `format: text`（该规则集为混合类型文本规则，不能用原来的 `domain` / `mrs` 二进制格式） |
+- **规则源**：[viewer12/OverseasAI.list](https://github.com/viewer12/OverseasAI.list)
+- **规则数**：约 618 条（DOMAIN 50 / DOMAIN-SUFFIX 553 / DOMAIN-KEYWORD 11 / IP-CIDR 2 / IP-ASN 2）
+- **更新频率**：规则源每天更新，配置每天自动拉取（`interval: 86400`）
+- **覆盖范围**：OpenAI、Claude、Anthropic、Gemini、Copilot、Civitai，以及 Stripe、PayPal、Nvidia、JetBrains AI 等
+- **技术细节**：`behavior: classical` + `format: text`（该规则集为混合类型文本规则，不能用原来的 `domain` / `mrs` 二进制格式）
 
 ## 📱 在 FlClash 中使用
 
