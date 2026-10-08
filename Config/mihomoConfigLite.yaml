@@ -384,7 +384,7 @@ proxy-groups:
   - name: 'GitHub'
     <<: [*group_common_select, *proxies_default]
     default-selected: '美国'
-    icon: 'https://cdn.simpleicons.org/github'
+    icon: 'https://fastly.jsdelivr.net/gh/wjj-bit-kriz/MyClash@main/Icons/svg/Github.svg'
 
   - name: 'Telegram'
     <<: [*group_common_select, *proxies_default]
